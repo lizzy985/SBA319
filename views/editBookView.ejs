@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Books</title>
+    <link rel="stylesheet" href="/styles/add.css">
+</head>
+<body>
+    <h1>Edit Books</h1>
+    <div>
+        <form action="/books/edit/<%= editBook._id %>?_method=PUT" method="POST">
+            <label for="bookname">Name:</label>
+            <input type="text" id="bookname" name="bookname" value="<%= editBook.bookname %>" required>
+            <br>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" value="<%= editBook.price %>" required>
+            <br>
+            <!-- <label for="quantity">Quantity: </label>
+            <input type="number" id="quantity" name="quantity" value="<= editBook.quantity %>" required>
+            <br> -->
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" value="<%= new Date(editBook.date).toISOString().split('T')[0] %>" required>
+            <br>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" value="<%= editBook.location %>" required>
+            <br>
+            <label for="reviews">Reviews: </label>
+            <input type="text" id="reviews" name="reviews" value="<%= editBook.comment %>" >
+            <br>
+            <button type="submit">Update Book</button>
+        </form>
+        <a href="/clothes">Back To Books List</a>
+    </div>
+    
+</body>
+</html>

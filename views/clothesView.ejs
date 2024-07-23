@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes</title>
+    <link rel="stylesheet" href="/styles/sub.css">
+</head>
+<body>
+    <h1>Clothes List</h1>
+    <div>
+        <a href="/clothes/add">Add Clothes</a>
+        <ul>
+            <% clothes.forEach(cloth => { %>
+                <li>
+                    <h2><%= cloth.clothname %></h2>
+                    <p>Price: $<%= cloth.price.toFixed(2) %></p>
+                    <p>Quantity: <%= cloth.quantity %></p>
+                    <p>Date Added: <%= cloth.date %></p>
+                    <p>Location: <%= cloth.location %></p>
+                    <!-- <ul>
+                        < cloth.reviews.forEach(eachReview =>{%>
+                            <li>
+                                <p><= eachReview.user.username %></p>
+                                <p><= eachReview.comment %></p>
+                            </li>
+                        < }) %>
+                    </ul> -->
+                    <p>Reviews: <%= cloth.reviews %></p>
+                    <div>
+                        <a href="/clothes/edit/<%= cloth._id %>">Edit Cloth</a>
+                        <form action="/clothes/delete/<%= cloth._id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                        
+                    </div>
+                    
+                </li>
+            <% }) %>
+        </ul>
+        <a href="/">Back To Home</a>
+    </div>
+</body>
+</html>

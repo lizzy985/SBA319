@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Furniture</title>
+    <link rel="stylesheet" href="/styles/add.css">
+</head>
+<body>
+    <h1>Add Furniture</h1>
+    <div>
+        <form action="/furnitures/add" method="POST">
+            <label for="furniturename">Name:</label>
+            <input type="text" id="furniturename" name="furniturename" required>
+            <br>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+            <br>
+            <!-- <label for="quantity">Quantity: </label>
+            <input type="number" id="quantity" name="quantity" >
+            <br> -->
+            <label for="location">Location: </label>
+            <input type="text" id="location" name="location" required>
+            <br>
+            <!-- <label for="reviews">Review: </label>
+            <input type="text" id="reviews" name="reviews" >
+            <br> -->
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/furnitures">Back To Furnitures List</a>
+    </div>
+</body>
+</html>

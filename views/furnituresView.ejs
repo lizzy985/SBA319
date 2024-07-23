@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuiniture List</title>
+    <link rel="stylesheet" href="/styles/sub.css">
+</head>
+<body>
+    <h1>Fuiniture List</h1>
+    <div>
+        <a href="/furnitures/add">Add Furniture</a>
+        <ul>
+            <% furnitures.forEach(furniture => { %>  
+                <li>
+                    <h2><%= furniture.furniturename %></h2>
+                    <p><%=  furniture.price %></p>
+                    <p><%= furniture.location %></p>
+                    <p><%= furniture.date %></p>
+                </li>
+
+                <div>
+                    <a href="/furnitures/edit/<%= furniture._id %>">Edit Furniture</a>
+                    <form action="/furnitures/delete/<%= furniture._id %>?_method=DELETE" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                    
+                </div>
+
+            <% }) %>
+        </ul>
+        <a href="/">Back To Home</a>
+    </div>
+</body>
+</html>
